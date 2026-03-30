@@ -1,5 +1,10 @@
-fruta = str(input("Insira uma fruta: "))
-fruta1 = str(input("Insira uma fruta: "))
-fruta2 = str(input("Insira uma fruta: "))
+Tuple = ("Melancia", "Laranjas", "Lemões")
 
+r = str(input("Procurar por: "))
 
+if r in Tuple:
+    print("Está na lista")
+
+else:
+    print("Não está na lista")
+    
