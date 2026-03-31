@@ -2,8 +2,8 @@ import time
 import sys
 
 
-agenda = {"contato1": {"nome": "Ana", "telefone": "1111-1111"},
-          "contato2": {"nome": "Bruno", "telefone": "2222-2222"}}
+agenda = {"contato1": {"nome": "Ana", "telefone": "(22) 91111-1111"},
+          "contato2": {"nome": "Bruno", "telefone": "(33) 92222-2222"}}
 
 print("Adicionar, Atualizar, Remover ou Lista Ordenada")
 print("Oque fazer?")
@@ -15,7 +15,6 @@ if r == "adicionar" or r == "Adicionar":
 
     cont = str(cont)
     cont = list(cont)
-    print(cont)
 
     if cont[-5] != "-":            # Adiciona "-" xxxxxx-xxxx
         cont.insert(-4, "-")
@@ -36,23 +35,29 @@ if r == "adicionar" or r == "Adicionar":
         print("O número está errado")
         sys.exit()
     
+    r = len(agenda)
+    r += 1
+    r = f"contato{r}"
+
     cont = "".join(cont)
-    agenda["contato2"] = {"nome": nome, "telefone": cont}
-    print("Contato adicionado", agenda["contato2"])
+    agenda[r] = {"nome": nome, "telefone": cont}
+    print("Contato adicionado", agenda[r])
 
 elif r == "atualizar" or r == "Atualizar":
     print("Qual contato atualizar? (Ex: contato1)")
-    r1 = str(input())
+    edit = str(input())
 
-    print(agenda[r1])
+    print(agenda[edit])
 
     print("Oque editar? (nome ou telefone)")
     r = str(input())
 
     if r == "nome" or r == "Nome":
         r = input("Insira o novo nome: ")
-        agenda[r1, ["nome", r]]
-        print(agenda)
+        
+        agenda["contato1"]["nome"] = r
+
+        print(f"Contato atualizado: {agenda[edit]}")
 
     elif r == "telefone" or r == "Telefone":
         r = input("Insira o novo telefone: ")
@@ -81,5 +86,21 @@ elif r == "atualizar" or r == "Atualizar":
     
         cont = "".join(cont)
 
-        agenda[r1, {"telefone": cont}]
-        print(agenda)
+        agenda[edit]["telefone"] = cont
+        print(f"Contato atualizado: {agenda[edit]}")
+
+    else:
+        print("Erro")
+
+elif r  == "remover" or r == "Remover":
+    print("Qual contato remover?")
+    r = str(input())
+
+    del agenda[r]
+    print(f"agenda: {agenda}")
+
+elif r == "listar" or r == "Listar":
+    print(f"Agenda: {agenda}")
+
+else:
+    print("Erro")
