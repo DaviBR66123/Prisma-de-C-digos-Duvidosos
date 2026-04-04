@@ -1,10 +1,10 @@
 def qual_maior(lista):
     lens = len(lista)
     cont = int(0)
-    r1 = int(0)
+    r = int(0)
 
     for cont in range(lens):
-        if lista[cont] >= r1:
+        if lista[cont] >= r:
             r = lista[cont]
 
     return r
@@ -23,6 +23,7 @@ while True:
 
     try:
         lista.append(int(r))
+        print(type(lista[-1]))
     
     except ValueError:
         print("Invalido")
