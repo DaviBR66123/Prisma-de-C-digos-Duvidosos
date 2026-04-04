@@ -22,7 +22,8 @@ while True:
         break
 
     try:
-        lista.append(int(r))
+        r = int(r)
+        lista.append(r)
         print(type(lista[-1]))
     
     except ValueError:
