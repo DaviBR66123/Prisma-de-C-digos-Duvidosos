@@ -1,23 +1,31 @@
 def qual_maior(lista):
     lens = len(lista)
     cont = int(0)
-    r = int(0)
+    r1 = int(0)
 
     for cont in range(lens):
-        if lista[cont] > r:
+        if lista[cont] >= r1:
             r = lista[cont]
 
     return r
 
-lista = []
+lista = [int(0)]
 r = 0
 
 print("Acrescente números a lista. Digite uma letra para sair")
 
-while r != "sair" and r != "Sair":
+while True:
     r = input()
-    if r != "sair" and r != "Sair":
+
+    if r.lower() == "sair":
         lista.append(r)
+        break
+
+    try:
+        lista.append(int(r))
+    
+    except ValueError:
+        print("Invalido")
 
 r = qual_maior(lista)
 print(f"O maior número é {r}")
