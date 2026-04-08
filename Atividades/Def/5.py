@@ -1,5 +1,5 @@
-def contar_letras(r):
-    strlista = list(strlista)
+def contar_letras(strlista):
+    frag = list(strlista)
     r = len(strlista)
     return r
 
