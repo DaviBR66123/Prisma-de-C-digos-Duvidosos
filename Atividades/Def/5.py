@@ -1,10 +1,8 @@
-def contar_letras(strlista):
-    frag = list(strlista)
-    r = len(strlista)
+def contar_letras(l):
+    r = list(l)
+    r = len(l)
     return r
 
-strlista = []
-strlista.append(input("Digite uma palavra: "))
+r = input("Digite uma palavra: ")
 
-r = contar_letras(strlista)
-print(f"A palavra possui {r} letras")
+print(f"A palavra {r} possui {contar_letras(r)} letras")

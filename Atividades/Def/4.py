@@ -1,5 +1,6 @@
-def qual_maior(lista):
-    print(f"O maior numero é {max(lista)}")
+def qual_maior(l):
+    l = max(l)
+    return l
 
 lista = [int(0)]
 r = 0
@@ -10,7 +11,6 @@ while True:
     r = input()
 
     if r.lower() == "sair":
-        lista.append(r)
         break
 
     try:
@@ -21,4 +21,4 @@ while True:
     except ValueError:
         print("Invalido")
 
-qual_maior(lista)
+print(f"O maior numero é {qual_maior(lista)}")

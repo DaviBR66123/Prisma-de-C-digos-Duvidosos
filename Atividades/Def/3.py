@@ -2,15 +2,13 @@ def é_par (n1):
     n1 %= 2
 
     if n1 == 1:
-        r = "não"
+        r = "ímpar"
     
     else:
-        r = "sim"
+        r = "par"
     
     return r
 
 n1 = float(input("Digite um número: "))
-r = é_par(n1)
 
-print("O número é par?")
-print(r)
+print(f"O número é {é_par(n1)}")
