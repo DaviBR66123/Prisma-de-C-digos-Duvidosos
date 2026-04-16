@@ -1,4 +1,4 @@
-import time
+from Coisas.BibliotecaFunções import format_telefone
 import sys
 
 
@@ -13,33 +13,8 @@ if r == "adicionar" or r == "Adicionar":
     nome = input("Insira seu nome: ")
     cont = input("Insira seu número: ")
 
-    cont = str(cont)
-    cont = list(cont)
-
-    if cont[-5] != "-":            # Adiciona "-" xxxxxx-xxxx
-        cont.insert(-4, "-")
+    cont = format_telefone(cont)
     
-    if cont[2] != " ":             # Adiciona " " xx xxxx-xxxx
-        cont.insert(2, " ")
-    
-    if cont[3] != "9":               # Adiciona "9" xx 9xxxx-xxxx
-        cont.insert(3, "9")
-
-    nc = len(cont)    
-    if nc == 13:                   # Para formato xx 9xxxx-xxxx '13 caracteres'
-
-        cont.insert(2, ")")        # Para formato (xx) 9xxxx-xxxx
-        cont.insert(0, "(")
-
-    else:                
-        print("O número está errado")
-        sys.exit()
-    
-    r = len(agenda)
-    r += 1
-    r = f"contato{r}"
-
-    cont = "".join(cont)
     agenda[r] = {"nome": nome, "telefone": cont}
     print("Contato adicionado", agenda[r])
 
