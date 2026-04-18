@@ -1,0 +1,6 @@
+create table pedidos (
+    id_pedido int AUTO_INCREMENT primary key,
+    data_pedido datetime,
+    valor_total decimal(10,2) not null,
+    status varchar(20) default 'Pendente'
+)

@@ -1,0 +1,5 @@
+create table biblioteca (
+  prateleira int
+)
+
+select prateleira from biblioteca

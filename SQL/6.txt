@@ -1,0 +1,8 @@
+create table produtos (
+  id_produto = int AUTO_INCREMENT primary key
+  nome = varchar(80) not null
+  descricao = text
+  preco = decimal(10,2)
+  estoque = int
+  data_cadastro = DATETIME
+)
